@@ -20,7 +20,7 @@
 
 <h2>Delete Book</h2>
 
-<s:form action="deleteBookByName">   <!-- ✅ changed action name -->
+<s:form action="deleteBookByName">   
     <s:textfield name="name" label="Enter Book Name"/>
     <s:submit value="Delete Book"/>
 </s:form>
