@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.objectFactory" value="spring"/>
+
+    <package name="myPackage" namespace="/" extends="struts-default">
+
+        <action name="saveBook" class="librarySystemAction" method="saveBook">
+            <result name="success">/addBook.jsp</result>
+            <result name="input">/addBook.jsp</result>
+        </action>
+
+        <action name="getAll" class="librarySystemAction" method="getAllBooks">
+            <result name="success">/getAll.jsp</result>
+            <result name="input">/getAll.jsp</result>
+        </action>
+
+        <action name="findBook">
+            <result>/findBook.jsp</result>
+        </action>
+
+        <action name="getBookByName" class="librarySystemAction" method="getBookByName">
+            <result name="success">/findBook.jsp</result>
+            <result name="input">/findBook.jsp</result>
+        </action>
+
+        <action name="updateBook">
+            <result>/updateBook.jsp</result>
+        </action>
+
+        <action name="findBookForUpdate" class="librarySystemAction" method="getBookByName">
+            <result name="success">/updateBook.jsp</result>
+            <result name="input">/updateBook.jsp</result>
+        </action>
+
+        <action name="updateBookDetails" class="librarySystemAction" method="updateBook">
+            <result name="success" type="redirectAction">getAll</result>
+            <result name="input">/updateBook.jsp</result>
+        </action>
+
+        <action name="deleteBook">
+            <result>/delete.jsp</result>
+        </action>
+
+        <action name="deleteBookByName" class="librarySystemAction" method="deleteBookByName">
+            <result name="success" type="redirectAction">getAll</result>
+            <result name="input">/delete.jsp</result>
+        </action>
+
+    </package>
+
+</struts>
