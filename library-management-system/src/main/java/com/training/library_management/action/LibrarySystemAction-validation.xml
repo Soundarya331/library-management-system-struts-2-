@@ -1,0 +1,45 @@
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.3//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+
+<validators>
+
+    <field name="name">
+        <field-validator type="requiredstring">
+            <message>Book name is required</message>
+        </field-validator>
+        <field-validator type="stringlength">
+            <param name="minLength">2</param>
+            <param name="maxLength">100</param>
+            <message>Book name must be between 2 and 100 characters</message>
+        </field-validator>
+    </field>
+
+    <field name="author">
+        <field-validator type="requiredstring">
+            <message>Author is required</message>
+        </field-validator>
+        <field-validator type="stringlength">
+            <param name="minLength">2</param>
+            <param name="maxLength">100</param>
+            <message>Author name must be between 2 and 100 characters</message>
+        </field-validator>
+    </field>
+
+    <field name="price">
+        <field-validator type="required">
+            <message>Price is required</message>
+        </field-validator>
+        <field-validator type="double">
+            <param name="minInclusive">0.0</param>
+            <message>Price must be a positive value</message>
+        </field-validator>
+    </field>
+
+    <field name="genre">
+        <field-validator type="requiredstring">
+            <message>Genre is required</message>
+        </field-validator>
+    </field>
+
+</validators>
